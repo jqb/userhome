@@ -16,7 +16,7 @@ def _posix_home(*path):
        >>> userhome._posix_home(".templates") == '/home/jacob/.templates'
        >>> userhome._posix_home(".templates", "django") == '/home/jacob/.templates/django'
     """
-    return ospath(os.environ["HOME"], *path)
+    return ospath.join(os.environ["HOME"], *path)
 
 
 def _nt_home(*path):
